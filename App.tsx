@@ -207,8 +207,8 @@ const Footer: React.FC<{ theme: string }> = ({ theme }) => (
         <div>
           <h4 className={`font-black uppercase tracking-[0.2em] text-xs mb-8 transition-colors duration-500 ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>Services</h4>
           <ul className={`space-y-4 font-medium transition-colors duration-500 ${theme === 'dark' ? 'text-slate-400' : 'text-slate-600'}`}>
-            <li><Link to="/consultancy" className="hover:text-red-500 transition-colors">Consultancy & Design</Link></li>
             <li><Link to="/event-ops" className="hover:text-red-500 transition-colors">Event Operations</Link></li>
+            <li><Link to="/consultancy" className="hover:text-red-500 transition-colors">Consultancy & Design</Link></li>
             <li><Link to="/equipment" className="hover:text-red-500 transition-colors">Equipment Sales</Link></li>
             <li><Link to="/projects" className="hover:text-red-500 transition-colors">Our Projects</Link></li>
           </ul>
