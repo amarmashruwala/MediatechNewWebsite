@@ -4,9 +4,28 @@ import { Mail, Phone, MapPin, Send, MessageSquare } from 'lucide-react';
 
 const Contact: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
+  const contactEmail = "support@mail.mediatechsolutions.live";
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    
+    const formData = new FormData(e.currentTarget);
+    const name = formData.get('name');
+    const email = formData.get('email');
+    const service = formData.get('service');
+    const message = formData.get('message');
+
+    // Constructing the mailto link
+    const subject = encodeURIComponent(`New Inquiry from ${name}: ${service}`);
+    const body = encodeURIComponent(
+      `Name: ${name}\n` +
+      `Email: ${email}\n` +
+      `Service: ${service}\n\n` +
+      `Message:\n${message}`
+    );
+
+    window.location.href = `mailto:${contactEmail}?subject=${subject}&body=${body}`;
+    
     setSubmitted(true);
     setTimeout(() => setSubmitted(false), 5000);
   };
@@ -37,7 +56,7 @@ const Contact: React.FC = () => {
                   <Mail className="text-red-500" />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-2">Email Us</h3>
-                <p className="text-slate-400">support@mail.mediatechsolutions.live</p>
+                <p className="text-slate-400 break-all">{contactEmail}</p>
               </div>
 
               <div className="p-8 bg-slate-900 rounded-3xl border border-slate-800 transition-transform hover:scale-[1.02]">
@@ -57,8 +76,8 @@ const Contact: React.FC = () => {
                     <div className="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-6">
                       <Send className="text-white" size={32} />
                     </div>
-                    <h2 className="text-3xl font-bold text-white mb-4">Message Sent!</h2>
-                    <p className="text-slate-400">Thank you for reaching out. We'll be in touch within 24 hours.</p>
+                    <h2 className="text-3xl font-bold text-white mb-4">Opening Email Client...</h2>
+                    <p className="text-slate-400">Your inquiry is being prepared. If your email client doesn't open automatically, please contact us directly at {contactEmail}.</p>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">
@@ -67,6 +86,7 @@ const Contact: React.FC = () => {
                         <label className="text-sm font-semibold text-slate-400 uppercase">Your Name</label>
                         <input 
                           required
+                          name="name"
                           type="text" 
                           placeholder="John Doe"
                           className="w-full bg-slate-950 border border-slate-800 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-red-500 transition-colors"
@@ -76,6 +96,7 @@ const Contact: React.FC = () => {
                         <label className="text-sm font-semibold text-slate-400 uppercase">Email Address</label>
                         <input 
                           required
+                          name="email"
                           type="email" 
                           placeholder="john@company.com"
                           className="w-full bg-slate-950 border border-slate-800 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-red-500 transition-colors"
@@ -84,7 +105,7 @@ const Contact: React.FC = () => {
                     </div>
                     <div className="space-y-2">
                       <label className="text-sm font-semibold text-slate-400 uppercase">Service Interested In</label>
-                      <select className="w-full bg-slate-950 border border-slate-800 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-red-500 transition-colors appearance-none">
+                      <select name="service" className="w-full bg-slate-950 border border-slate-800 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-red-500 transition-colors appearance-none">
                         <option>Consultancy & Design</option>
                         <option>Event Operations</option>
                         <option>Equipment Sales</option>
@@ -94,6 +115,7 @@ const Contact: React.FC = () => {
                     <div className="space-y-2">
                       <label className="text-sm font-semibold text-slate-400 uppercase">Message</label>
                       <textarea 
+                        name="message"
                         required
                         rows={5}
                         placeholder="Tell us about your project..."
@@ -115,22 +137,46 @@ const Contact: React.FC = () => {
         </div>
       </section>
       
-      {/* Map Placeholder */}
+      {/* Live Map Section */}
       <section className="mt-20 px-4 max-w-7xl mx-auto">
-        <div className="w-full h-96 bg-slate-900 rounded-3xl overflow-hidden border border-slate-800 relative group">
-          <div className="absolute inset-0 grayscale contrast-125 opacity-30">
-            <img 
-               src="https://picsum.photos/seed/mediatech_map/1600/600" 
-               alt="Map placeholder" 
-               className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="p-6 bg-slate-950/90 backdrop-blur border border-red-500/50 rounded-2xl text-center shadow-2xl">
-              <MapPin className="text-red-500 mx-auto mb-2" size={32} />
-              <p className="text-white font-bold">MediaTech Solutions</p>
-              <p className="text-slate-400 text-sm">1 Reid Avenue, Westmead NSW 2145</p>
+        <div className="w-full h-[500px] bg-slate-900 rounded-3xl overflow-hidden border border-slate-800 relative shadow-2xl">
+          {/* Real Google Maps Embed for the specific location */}
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3314.507386766432!2d150.9856511!3d-33.8118086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12a304495c25e3%3A0xc638f3829b537c3d!2s1%20Reid%20Ave%2C%20Westmead%20NSW%202145!5e0!3m2!1sen!2sau!4v1709100000000!5m2!1sen!2sau" 
+            width="100%" 
+            height="100%" 
+            style={{ border: 0, filter: 'grayscale(0.8) contrast(1.2) invert(0.9) hue-rotate(180deg)' }} 
+            allowFullScreen={true} 
+            loading="lazy" 
+            referrerPolicy="no-referrer-when-downgrade"
+            title="MediaTech Solutions Location"
+            className="absolute inset-0"
+          ></iframe>
+          
+          {/* Overlay address card */}
+          <div className="absolute top-8 left-8 p-6 bg-slate-950/90 backdrop-blur-lg border border-red-500/50 rounded-2xl text-left shadow-2xl max-w-xs transition-transform hover:scale-105">
+            <div className="flex items-center space-x-3 mb-3">
+              <div className="w-10 h-10 bg-red-600 rounded-lg flex items-center justify-center">
+                <MapPin className="text-white" size={20} />
+              </div>
+              <div>
+                <p className="text-white font-black text-lg">MediaTech</p>
+                <p className="text-red-500 font-bold text-xs uppercase tracking-tighter">HQ Location</p>
+              </div>
             </div>
+            <p className="text-slate-300 text-sm leading-relaxed">
+              1 Reid Avenue,<br />
+              Westmead NSW 2145<br />
+              Australia
+            </p>
+            <a 
+              href="https://maps.google.com/?q=1+Reid+Avenue+Westmead+NSW+2145" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="mt-4 inline-block text-red-500 font-bold text-xs hover:text-red-400 transition-colors"
+            >
+              Get Directions &rarr;
+            </a>
           </div>
         </div>
       </section>

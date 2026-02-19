@@ -166,7 +166,7 @@ const Footer: React.FC = () => (
             </li>
             <li className="flex items-center space-x-3">
               <Mail className="text-red-500 shrink-0 w-5 h-5" />
-              <span>support@mail.mediatechsolutions.live</span>
+              <span className="break-all">support@mail.mediatechsolutions.live</span>
             </li>
           </ul>
         </div>
