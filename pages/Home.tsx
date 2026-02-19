@@ -25,7 +25,7 @@ const Home: React.FC<HomeProps> = ({ theme = 'dark' }) => {
               <span>Innovation in Media Technology</span>
             </div>
             <h1 className={`text-5xl lg:text-7xl font-extrabold leading-[1.1] mb-6 transition-colors duration-500 ${theme === 'dark' ? 'text-white' : 'text-slate-950'}`}>
-              Empowering your Vision through <span className="text-gradient">Smart Media</span> Technology
+              Sydney's <span className="text-gradient">Live Streaming</span> & Event Technology Experts
             </h1>
             <p className={`text-xl mb-10 leading-relaxed max-w-xl transition-colors duration-500 ${theme === 'dark' ? 'text-slate-400' : 'text-slate-600'}`}>
               From high-end broadcast systems to seamless video conferencing, we bridge the gap between technology and creative ambition.
