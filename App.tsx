@@ -183,7 +183,7 @@ const Footer: React.FC<{ theme: string }> = ({ theme }) => (
             <Logo theme={theme} />
           </Link>
           <p className={`text-lg leading-relaxed max-w-md transition-colors duration-500 ${theme === 'dark' ? 'text-slate-400' : 'text-slate-600'}`}>
-            MediaTech Solutions is a specialist technology company focused on creating impactful and cost-effective meetings, events, and content, that solve today's challenges.
+            MediaTech Solutions is a specialist technology company focused on creating impactful and cost-effective meetings, events, and systems, that solve today's challenges.
           </p>
           <div className="flex space-x-5 mt-10">
             {[
