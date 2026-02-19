@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Monitor, Mic, Globe, Zap, CheckCircle2 } from 'lucide-react';
-import { TESTIMONIALS } from '../constants';
+import { TESTIMONIALS } from '../constants.tsx';
 
 const Home: React.FC = () => {
   // User provided image from the broadcast studio

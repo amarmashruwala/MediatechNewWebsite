@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Target, Users, ShieldCheck, Heart, ArrowRight } from 'lucide-react';
-import { TESTIMONIALS } from '../constants';
+import { TESTIMONIALS } from '../constants.tsx';
 
 const About: React.FC = () => {
   const welcomeImageUrl = "https://drive.google.com/thumbnail?id=115wkrjjXJlk3ykzifLRYzlnkoWp0fRro&sz=w1920-h1080";

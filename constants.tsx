@@ -11,7 +11,7 @@ import {
   MonitorCheck,
   Layers
 } from 'lucide-react';
-import { ServiceItem, Testimonial } from './types';
+import { ServiceItem, Testimonial } from './types.ts';
 
 export const COLORS = {
   primary: '#EF4444', // Red-500

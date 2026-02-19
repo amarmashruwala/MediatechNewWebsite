@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Monitor, Video, Mic2, Server, CheckCircle2 } from 'lucide-react';
-import { CONSULTANCY_SERVICES } from '../constants';
+import { CONSULTANCY_SERVICES } from '../constants.tsx';
 
 const Consultancy: React.FC = () => {
   return (

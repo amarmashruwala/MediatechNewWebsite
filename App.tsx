@@ -2,14 +2,14 @@
 import React, { useState, useEffect } from 'react';
 import { HashRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown, Mail, Phone, MapPin, Linkedin, Twitter, Facebook } from 'lucide-react';
-import Home from './pages/Home';
-import About from './pages/About';
-import Consultancy from './pages/Consultancy';
-import Contact from './pages/Contact';
-import Projects from './pages/Projects';
-import EventOperations from './pages/EventOperations';
-import EquipmentSales from './pages/EquipmentSales';
-import { NAV_LINKS } from './constants';
+import Home from './pages/Home.tsx';
+import About from './pages/About.tsx';
+import Consultancy from './pages/Consultancy.tsx';
+import Contact from './pages/Contact.tsx';
+import Projects from './pages/Projects.tsx';
+import EventOperations from './pages/EventOperations.tsx';
+import EquipmentSales from './pages/EquipmentSales.tsx';
+import { NAV_LINKS } from './constants.tsx';
 
 const Logo: React.FC<{ className?: string }> = ({ className = "" }) => (
   <div className={`flex items-center group cursor-pointer ${className}`}>
@@ -105,7 +105,7 @@ const Navbar: React.FC = () => {
                     {link.name} <ChevronDown className={`ml-1 w-3 h-3 transition-transform ${dropdownOpen ? 'rotate-180' : ''}`} />
                   </button>
                 ) : link.external ? (
-                  <a href={link.path} target="_blank" rel="noopener noreferrer" className="text-xs font-bold text-slate-300 hover:text-red-500 transition-colors uppercase tracking-[0.2em]">
+                  <a href={link.path} target="_blank" rel="noopener noreferrer" className="text-sm font-bold text-slate-300 hover:text-red-500 transition-colors uppercase tracking-widest">
                     {link.name}
                   </a>
                 ) : (
