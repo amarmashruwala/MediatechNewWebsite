@@ -89,8 +89,8 @@ export const TESTIMONIALS: Testimonial[] = [
 export const NAV_LINKS = [
   { name: 'About', path: '/about' },
   { name: 'What We Do', path: '/what-we-do', dropdown: [
-    { name: 'Consultancy and Design', path: '/consultancy' },
     { name: 'Event Operations', path: '/event-ops' },
+    { name: 'Consultancy and Design', path: '/consultancy' },
     { name: 'Equipment Sales', path: '/equipment' }
   ]},
   { name: 'Blog', path: 'https://blog.mediatechsolutions.live/', external: true },

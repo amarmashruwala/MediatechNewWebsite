@@ -75,16 +75,16 @@ const Home: React.FC<HomeProps> = ({ theme = 'dark' }) => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               { 
-                icon: <Monitor size={32} className="text-red-500" />, 
-                title: 'Consultancy and Design', 
-                desc: 'Hardware and software systems design to tackle complex Media Technology Challenges.',
-                path: '/consultancy'
-              },
-              { 
                 icon: <Globe size={32} className="text-red-500" />, 
                 title: 'Event Operations', 
                 desc: 'Flawless execution of Virtual and Hybrid Meetings and high-impact Live Streaming Events.',
                 path: '/event-ops'
+              },
+              { 
+                icon: <Monitor size={32} className="text-red-500" />, 
+                title: 'Consultancy and Design', 
+                desc: 'Hardware and software systems design to tackle complex Media Technology Challenges.',
+                path: '/consultancy'
               },
               { 
                 icon: <Zap size={32} className="text-red-500" />, 
@@ -149,7 +149,7 @@ const Home: React.FC<HomeProps> = ({ theme = 'dark' }) => {
         <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
           <h2 className={`text-4xl md:text-6xl font-black mb-8 transition-colors ${theme === 'dark' ? 'text-white' : 'text-slate-950'}`}>Ready to Elevate Your Media Game?</h2>
           <p className={`text-xl mb-12 transition-colors ${theme === 'dark' ? 'text-slate-300' : 'text-slate-600'}`}>
-            Whether you need a full turn-key broadcast system or a bespoke video conferencing set-up, we are here to design your success.
+            Whether you need a full turn-key broadcast system or a bespoke livestream event set-up, we are here to design your success.
           </p>
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
             <Link to="/contact" className={`px-10 py-5 rounded-xl font-black text-xl transition-all shadow-2xl ${theme === 'dark' ? 'bg-white text-slate-950 hover:bg-slate-200' : 'bg-slate-950 text-white hover:bg-slate-800'}`}>

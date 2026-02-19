@@ -61,8 +61,8 @@ const About: React.FC<AboutProps> = ({ theme = 'dark' }) => {
           <h2 className={`text-4xl font-bold text-center mb-16 transition-colors duration-500 ${theme === 'dark' ? 'text-white' : 'text-slate-950'}`}>WHAT WE DO</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { path: "/consultancy", title: "Consultancy and Design", desc: "Hardware and software systems design to tackle Media Technology Challenges" },
               { path: "/event-ops", title: "Event Operations", desc: "Virtual and Hybrid Meetings and Live Streaming Events managed by experts" },
+              { path: "/consultancy", title: "Consultancy and Design", desc: "Hardware and software systems design to tackle Media Technology Challenges" },
               { path: "/equipment", title: "Equipment Sales", desc: "Innovative Audio Visual and Live Streaming Equipment Sales for high-tier production" }
             ].map((s, idx) => (
               <Link key={idx} to={s.path} className={`group p-10 rounded-2xl border transition-all ${theme === 'dark' ? 'bg-slate-950 border-slate-800 hover:border-red-500' : 'bg-white border-slate-200 hover:border-red-500 shadow-sm'}`}>
