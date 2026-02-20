@@ -28,7 +28,7 @@ const Home: React.FC<HomeProps> = ({ theme = 'dark' }) => {
               Sydney's <span className="text-gradient">Live Streaming</span> & Event Technology Experts
             </h1>
             <p className={`text-xl mb-10 leading-relaxed max-w-xl transition-colors duration-500 ${theme === 'dark' ? 'text-slate-400' : 'text-slate-600'}`}>
-              From high-end broadcast systems to seamless video conferencing, we bridge the gap between technology and creative ambition.
+              From high-end broadcast systems to seamless Livestream Events, we bridge the gap between technology and creative ambition.
             </p>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
               <Link to="/contact" className="px-8 py-4 bg-red-600 hover:bg-red-700 text-white rounded-xl font-bold text-lg transition-all shadow-xl shadow-red-900/40 flex items-center justify-center">
@@ -149,7 +149,7 @@ const Home: React.FC<HomeProps> = ({ theme = 'dark' }) => {
         <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
           <h2 className={`text-4xl md:text-6xl font-black mb-8 transition-colors ${theme === 'dark' ? 'text-white' : 'text-slate-950'}`}>Ready to Elevate Your Media Game?</h2>
           <p className={`text-xl mb-12 transition-colors ${theme === 'dark' ? 'text-slate-300' : 'text-slate-600'}`}>
-            Whether you need a full turn-key broadcast system or a bespoke livestream event set-up, we are here to design your success.
+            Whether you need a full turn-key broadcast system or a bespoke hybrid event set-up, we are here to design your success.
           </p>
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
             <Link to="/contact" className={`px-10 py-5 rounded-xl font-black text-xl transition-all shadow-2xl ${theme === 'dark' ? 'bg-white text-slate-950 hover:bg-slate-200' : 'bg-slate-950 text-white hover:bg-slate-800'}`}>

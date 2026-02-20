@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { HashRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, Mail, Phone, MapPin, Linkedin, Youtube, Facebook, Sun, Moon } from 'lucide-react';
+import { Menu, X, ChevronDown, Mail, Phone, MapPin, Linkedin, Twitter, Facebook, Sun, Moon } from 'lucide-react';
 import Home from './pages/Home.tsx';
 import About from './pages/About.tsx';
 import Consultancy from './pages/Consultancy.tsx';
@@ -183,21 +183,11 @@ const Footer: React.FC<{ theme: string }> = ({ theme }) => (
             <Logo theme={theme} />
           </Link>
           <p className={`text-lg leading-relaxed max-w-md transition-colors duration-500 ${theme === 'dark' ? 'text-slate-400' : 'text-slate-600'}`}>
-            MediaTech Solutions is a specialist technology company focused on creating impactful and cost-effective meetings, events, and systems, that solve today's challenges.
+            MediaTech Solutions is a specialist technology company focused on creating impactful and cost-effective meetings, events, and content, that solve today's challenges.
           </p>
           <div className="flex space-x-5 mt-10">
-            {[
-              { Icon: Linkedin, href: '#' },
-              { Icon: Youtube, href: 'https://www.youtube.com/@mediatechtube' },
-              { Icon: Facebook, href: 'https://www.facebook.com/AVStreamingTech' }
-            ].map(({ Icon, href }, idx) => (
-              <a 
-                key={idx} 
-                href={href} 
-                target={href !== '#' ? "_blank" : undefined}
-                rel={href !== '#' ? "noopener noreferrer" : undefined}
-                className={`p-4 rounded-2xl transition-all border shadow-lg ${theme === 'dark' ? 'bg-slate-900 text-slate-400 hover:text-red-500 hover:bg-slate-800 border-slate-800' : 'bg-white text-slate-600 hover:text-red-600 border-slate-200'}`}
-              >
+            {[Linkedin, Twitter, Facebook].map((Icon, idx) => (
+              <a key={idx} href="#" className={`p-4 rounded-2xl transition-all border shadow-lg ${theme === 'dark' ? 'bg-slate-900 text-slate-400 hover:text-red-500 hover:bg-slate-800 border-slate-800' : 'bg-white text-slate-600 hover:text-red-600 border-slate-200'}`}>
                 <Icon size={22} />
               </a>
             ))}
@@ -207,8 +197,8 @@ const Footer: React.FC<{ theme: string }> = ({ theme }) => (
         <div>
           <h4 className={`font-black uppercase tracking-[0.2em] text-xs mb-8 transition-colors duration-500 ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>Services</h4>
           <ul className={`space-y-4 font-medium transition-colors duration-500 ${theme === 'dark' ? 'text-slate-400' : 'text-slate-600'}`}>
-            <li><Link to="/event-ops" className="hover:text-red-500 transition-colors">Event Operations</Link></li>
             <li><Link to="/consultancy" className="hover:text-red-500 transition-colors">Consultancy & Design</Link></li>
+            <li><Link to="/event-ops" className="hover:text-red-500 transition-colors">Event Operations</Link></li>
             <li><Link to="/equipment" className="hover:text-red-500 transition-colors">Equipment Sales</Link></li>
             <li><Link to="/projects" className="hover:text-red-500 transition-colors">Our Projects</Link></li>
           </ul>
