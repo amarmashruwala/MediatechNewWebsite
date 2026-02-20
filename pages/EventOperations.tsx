@@ -23,7 +23,11 @@ const EventOperations: React.FC<EventOpsProps> = ({ theme = 'dark' }) => {
 
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start mb-24">
+             <div className={`rounded-2xl overflow-hidden border shadow-2xl relative group transition-colors duration-500 ${theme === 'dark' ? 'border-slate-800' : 'border-slate-100'}`}>
+                <div className="absolute inset-0 bg-red-600/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+                <img src={eventOpsImageUrl} alt="Event Operations Control Room" className="w-full h-auto object-cover max-h-[600px] transition-transform duration-700 group-hover:scale-105" />
+             </div>
              <div>
                 <h2 className={`text-4xl font-bold mb-8 transition-colors ${theme === 'dark' ? 'text-white' : 'text-slate-950'}`}>Flawless execution of high-stakes live events.</h2>
                 <p className={`text-lg mb-6 leading-relaxed transition-colors ${theme === 'dark' ? 'text-slate-400' : 'text-slate-700'}`}>
@@ -31,10 +35,11 @@ const EventOperations: React.FC<EventOpsProps> = ({ theme = 'dark' }) => {
                 </p>
                 <div className="space-y-4">
                    {[
-                      "End-to-end event management",
+                      "End-to-end technical management",
                       "Multi-camera live switching & production",
                       "Remote guest integration",
-                      "Interactive audience tools",
+                      "Interactive audience engagement",
+                      "Outdoor Event Livestream",
                       "Full technical rehearsal & dry-runs"
                    ].map((item, i) => (
                       <div key={i} className="flex items-center space-x-3 font-medium">
@@ -45,10 +50,6 @@ const EventOperations: React.FC<EventOpsProps> = ({ theme = 'dark' }) => {
                       </div>
                    ))}
                 </div>
-             </div>
-             <div className={`rounded-2xl overflow-hidden border shadow-2xl relative group transition-colors duration-500 ${theme === 'dark' ? 'border-slate-800' : 'border-slate-100'}`}>
-                <div className="absolute inset-0 bg-red-600/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
-                <img src={eventOpsImageUrl} alt="Event Operations Control Room" className="w-full h-auto object-cover max-h-[600px] transition-transform duration-700 group-hover:scale-105" />
              </div>
           </div>
 
