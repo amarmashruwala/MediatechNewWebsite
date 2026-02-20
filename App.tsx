@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { HashRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, Mail, Phone, MapPin, Linkedin, Twitter, Facebook, Sun, Moon } from 'lucide-react';
+import { Menu, X, ChevronDown, Mail, Phone, MapPin, Linkedin, Youtube, Facebook, Sun, Moon } from 'lucide-react';
 import Home from './pages/Home.tsx';
 import About from './pages/About.tsx';
 import Consultancy from './pages/Consultancy.tsx';
@@ -186,8 +186,18 @@ const Footer: React.FC<{ theme: string }> = ({ theme }) => (
             MediaTech Solutions is a specialist technology company focused on creating impactful and cost-effective meetings, events, and content, that solve today's challenges.
           </p>
           <div className="flex space-x-5 mt-10">
-            {[Linkedin, Twitter, Facebook].map((Icon, idx) => (
-              <a key={idx} href="#" className={`p-4 rounded-2xl transition-all border shadow-lg ${theme === 'dark' ? 'bg-slate-900 text-slate-400 hover:text-red-500 hover:bg-slate-800 border-slate-800' : 'bg-white text-slate-600 hover:text-red-600 border-slate-200'}`}>
+            {[
+              { Icon: Linkedin, href: "#" },
+              { Icon: Youtube, href: "https://www.youtube.com/@mediatechtube" },
+              { Icon: Facebook, href: "https://www.facebook.com/AVStreamingTech" }
+            ].map(({ Icon, href }, idx) => (
+              <a 
+                key={idx} 
+                href={href} 
+                target={href.startsWith('http') ? "_blank" : undefined}
+                rel={href.startsWith('http') ? "noopener noreferrer" : undefined}
+                className={`p-4 rounded-2xl transition-all border shadow-lg ${theme === 'dark' ? 'bg-slate-900 text-slate-400 hover:text-red-500 hover:bg-slate-800 border-slate-800' : 'bg-white text-slate-600 hover:text-red-600 border-slate-200'}`}
+              >
                 <Icon size={22} />
               </a>
             ))}
