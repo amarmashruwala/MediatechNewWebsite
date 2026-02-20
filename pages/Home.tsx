@@ -9,7 +9,7 @@ interface HomeProps {
 }
 
 const Home: React.FC<HomeProps> = ({ theme = 'dark' }) => {
-  const heroImageUrl = "https://drive.google.com/thumbnail?id=1dgHz8-asPWsddpAeqzSzCNHw39Y-H11y&sz=w1920-h1080";
+  const heroImageUrl = "https://drive.google.com/thumbnail?id=1dgHz8-asPWsddpAeqzSzCNHw39Y-H11y&sz=w1280-h720";
 
   return (
     <div className="relative overflow-hidden">
@@ -46,6 +46,8 @@ const Home: React.FC<HomeProps> = ({ theme = 'dark' }) => {
                 src={heroImageUrl} 
                 alt="MediaTech Solutions Studio Setup" 
                 className="w-full h-auto min-h-[400px] object-cover opacity-90 brightness-110"
+                loading="lazy"
+                decoding="async"
               />
               <div className={`absolute inset-0 bg-gradient-to-t via-transparent to-transparent ${theme === 'dark' ? 'from-slate-950' : 'from-white/40'}`}></div>
               <div className={`absolute bottom-6 left-6 right-6 p-6 backdrop-blur-md rounded-xl border transition-colors duration-500 ${theme === 'dark' ? 'bg-slate-900/80 border-white/5' : 'bg-white/80 border-slate-200 shadow-xl'}`}>

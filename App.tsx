@@ -1,14 +1,15 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { HashRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, Mail, Phone, MapPin, Linkedin, Youtube, Facebook, Sun, Moon } from 'lucide-react';
-import Home from './pages/Home.tsx';
-import About from './pages/About.tsx';
-import Consultancy from './pages/Consultancy.tsx';
-import Contact from './pages/Contact.tsx';
-import Projects from './pages/Projects.tsx';
-import EventOperations from './pages/EventOperations.tsx';
-import EquipmentSales from './pages/EquipmentSales.tsx';
+import { Menu, X, ChevronDown, Mail, Phone, MapPin, Linkedin, Youtube, Facebook, Sun, Moon, Loader2 } from 'lucide-react';
+
+const Home = lazy(() => import('./pages/Home.tsx'));
+const About = lazy(() => import('./pages/About.tsx'));
+const Consultancy = lazy(() => import('./pages/Consultancy.tsx'));
+const Contact = lazy(() => import('./pages/Contact.tsx'));
+const Projects = lazy(() => import('./pages/Projects.tsx'));
+const EventOperations = lazy(() => import('./pages/EventOperations.tsx'));
+const EquipmentSales = lazy(() => import('./pages/EquipmentSales.tsx'));
 import { NAV_LINKS } from './constants.tsx';
 
 const Logo: React.FC<{ theme: string }> = ({ theme }) => (
@@ -268,15 +269,21 @@ const App: React.FC = () => {
       <div className={`flex flex-col min-h-screen transition-colors duration-500 selection:bg-red-500/30 selection:text-red-200 ${theme === 'dark' ? 'bg-slate-950 text-slate-100' : 'bg-slate-50 text-slate-900'}`}>
         <Navbar theme={theme} toggleTheme={toggleTheme} />
         <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Home theme={theme} />} />
-            <Route path="/about" element={<About theme={theme} />} />
-            <Route path="/consultancy" element={<Consultancy theme={theme} />} />
-            <Route path="/contact" element={<Contact theme={theme} />} />
-            <Route path="/projects" element={<Projects theme={theme} />} />
-            <Route path="/event-ops" element={<EventOperations theme={theme} />} />
-            <Route path="/equipment" element={<EquipmentSales theme={theme} />} />
-          </Routes>
+          <Suspense fallback={
+            <div className="flex items-center justify-center min-h-[60vh]">
+              <Loader2 className="w-10 h-10 text-red-600 animate-spin" />
+            </div>
+          }>
+            <Routes>
+              <Route path="/" element={<Home theme={theme} />} />
+              <Route path="/about" element={<About theme={theme} />} />
+              <Route path="/consultancy" element={<Consultancy theme={theme} />} />
+              <Route path="/contact" element={<Contact theme={theme} />} />
+              <Route path="/projects" element={<Projects theme={theme} />} />
+              <Route path="/event-ops" element={<EventOperations theme={theme} />} />
+              <Route path="/equipment" element={<EquipmentSales theme={theme} />} />
+            </Routes>
+          </Suspense>
         </main>
         <Footer theme={theme} />
       </div>
