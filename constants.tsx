@@ -62,7 +62,8 @@ export const CONSULTANCY_SERVICES: Record<string, ServiceItem> = {
       'Cloud and On-premise Systems',
       'Media Storage Systems',
       'Media Network Deployment',
-      'Server Virtualization'
+      'Server Virtualization',
+      'AI Transcription Systems'
     ]
   }
 };
