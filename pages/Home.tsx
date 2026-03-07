@@ -56,7 +56,7 @@ const Home: React.FC<HomeProps> = ({ theme = 'dark' }) => {
                     <Monitor className="text-white" size={24} />
                   </div>
                   <div>
-                    <h3 className={`font-bold transition-colors ${theme === 'dark' ? 'text-white' : 'text-slate-950'}`}>Advanced Control Systems</h3>
+                    <h3 className={`font-bold transition-colors ${theme === 'dark' ? 'text-white' : 'text-slate-950'}`}>Advanced Broadcast Systems</h3>
                     <p className={`text-sm transition-colors ${theme === 'dark' ? 'text-slate-400' : 'text-slate-600'}`}>Next-gen infrastructure for global reach</p>
                   </div>
                 </div>
