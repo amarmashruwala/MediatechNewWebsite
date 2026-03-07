@@ -53,7 +53,7 @@ const Logo: React.FC<{ theme: string }> = ({ theme }) => (
         <span className={`text-2xl md:text-3xl font-light tracking-tighter ml-1.5 opacity-90 transition-colors duration-500 ${theme === 'dark' ? 'text-white' : 'text-slate-700'}`}>Solutions</span>
       </div>
       <span className="text-[10px] md:text-[12px] font-bold tracking-tight text-red-500 mt-1.5 leading-none transition-colors duration-300 group-hover:text-red-400">
-        Empowering Media Through Technology
+        Audio Visual & Content Systems 
       </span>
     </div>
   </div>
