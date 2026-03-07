@@ -149,7 +149,7 @@ const Home: React.FC<HomeProps> = ({ theme = 'dark' }) => {
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-red-600 opacity-10"></div>
         <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
-          <h2 className={`text-4xl md:text-6xl font-black mb-8 transition-colors ${theme === 'dark' ? 'text-white' : 'text-slate-950'}`}>Ready to Elevate Your Media communication?</h2>
+          <h2 className={`text-4xl md:text-6xl font-black mb-8 transition-colors ${theme === 'dark' ? 'text-white' : 'text-slate-950'}`}>Ready to Elevate Your Media Communication?</h2>
           <p className={`text-xl mb-12 transition-colors ${theme === 'dark' ? 'text-slate-300' : 'text-slate-600'}`}>
             Whether you need a full turn-key broadcast system or a bespoke hybrid event set-up, we are here to design your success.
           </p>
