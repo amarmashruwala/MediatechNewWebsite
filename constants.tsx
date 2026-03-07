@@ -71,11 +71,11 @@ export const CONSULTANCY_SERVICES: Record<string, ServiceItem> = {
 export const TESTIMONIALS: Testimonial[] = [
   {
     name: 'Shelina Nicholas',
-    text: 'MediaTech Innovations was simply amazing! Couldn’t have ask for a better partner! Everything was on point! I highly recommended, you won’t be disappointed!'
+    text: 'MediaTech Solutions was simply amazing! Couldn’t have ask for a better partner! Everything was on point! I highly recommended, you won’t be disappointed!'
   },
   {
     name: 'Brian Moten',
-    text: 'MediaTech Innovations exceeded all expectations! Our live streaming systems perform flawlessly! Absolutely recommend their services - you\'ll be thrilled with the results!'
+    text: 'MediaTech Solutions exceeded all expectations! Our live streaming systems perform flawlessly! Absolutely recommend their services - you\'ll be thrilled with the results!'
   },
   {
     name: 'Sarah Jenkins',
