@@ -56,8 +56,9 @@ const EventOperations: React.FC<EventOpsProps> = ({ theme = 'dark' }) => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               { icon: <Globe size={32} />, title: 'Hybrid Convergence', desc: 'Bridge the gap between physical and remote participants with crystal clear audio and low-latency feeds.' },
-              { icon: <Users size={32} />, title: 'Attendee Engagement', desc: 'Leverage real-time Q&A, polling, and interactive features that make your virtual event dynamic.' },
-              { icon: <Calendar size={32} />, title: 'Project Management', desc: 'Dedicated event directors and technicians who handle pre-planning to post-event teardown.' }
+              { icon: <Calendar size={32} />, title: 'Project Management', desc: 'Dedicated event directors and technicians who handle pre-planning to post-event teardown.' },
+              { icon: <Users size={32} />, title: 'Attendee Engagement', desc: 'Leverage real-time Q&A, polling, and interactive features that make your virtual event dynamic.' }
+              
             ].map((card, idx) => (
               <div key={idx} className={`p-8 rounded-2xl border transition-all hover:-translate-y-1 ${theme === 'dark' ? 'bg-slate-900 border-slate-800 hover:border-red-500/30' : 'bg-white border-slate-200 shadow-sm hover:border-red-500/30 shadow-slate-200'}`}>
                 <div className="text-red-500 mb-6">{card.icon}</div>
