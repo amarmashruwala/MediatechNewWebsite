@@ -79,19 +79,19 @@ const Home: React.FC<HomeProps> = ({ theme = 'dark' }) => {
               { 
                 icon: <Globe size={32} className="text-red-500" />, 
                 title: 'Event Operations', 
-                desc: 'Flawless execution of Virtual and Hybrid Meetings and high-impact Live Streaming Events.',
+                desc: 'Flawless execution of Virtual and Hybrid Meetings and high-impact Live Streaming Events',
                 path: '/event-ops'
               },
               { 
                 icon: <Monitor size={32} className="text-red-500" />, 
                 title: 'Consultancy and Design', 
-                desc: 'Hardware and software systems design to tackle complex Media Technology Challenges.',
+                desc: 'On Premise and Cloud system design and Deployment to tackle complex Media Technology Challenges',
                 path: '/consultancy'
               },
               { 
                 icon: <Zap size={32} className="text-red-500" />, 
                 title: 'Equipment Sales', 
-                desc: 'Providing innovative Audio Visual and Live Streaming equipment for professional set-ups.',
+                desc: 'Providing innovative Audio Visual and Live Streaming equipment for professional set-ups',
                 path: '/equipment'
               }
             ].map((service, idx) => (
