@@ -25,7 +25,7 @@ const Home: React.FC<HomeProps> = ({ theme = 'dark' }) => {
               <span>Innovation in Media Technology</span>
             </div>
             <h1 className={`text-5xl lg:text-7xl font-extrabold leading-[1.1] mb-6 transition-colors duration-500 ${theme === 'dark' ? 'text-white' : 'text-slate-950'}`}>
-              Sydney's <span className="text-gradient">Audio Visual</span> & Livestreaming Experts
+              Sydney's <span className="text-gradient">Audio Visual</span> & Livestream Experts
             </h1>
             <p className={`text-xl mb-10 leading-relaxed max-w-xl transition-colors duration-500 ${theme === 'dark' ? 'text-slate-400' : 'text-slate-600'}`}>
               From high-end AI Media Systems to seamless Livestream Events, we bridge the gap between Technology, Content Distribution and Audience Engagement.
