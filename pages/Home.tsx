@@ -20,7 +20,6 @@ const Home: React.FC<HomeProps> = () => {
             alt="Professional broadcast studio console" 
             className="w-full h-full object-cover opacity-40"
             referrerPolicy="no-referrer"
-            loading="lazy"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent"></div>
         </div>

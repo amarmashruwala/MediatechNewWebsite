@@ -9,7 +9,43 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://lh3.googleusercontent.com/aida-public/AB6AXuAbjK0MV29CflD1o5D27Z9XUf8UarahJkMXXefHuiHceqvpba6LI30u0AWQmJKUy0tLqs09jxPCLDkJsEzZkcWb_NThA2IDwKrkfPHsOxwSK5KsHGDFcd_i_dAZYe_NfOLhzuD6RswHzjoOPcBaJrJFhDV8FQyfZHYOvSJzsHP4jlgxFcuGjijPURZgDZvXrfNcjCLEg1F0ZoIEZBd10HVAvQ-52IaE0T8MAi_5tDElWmwPIEeoOYXvHCnGIJsi-jNKgsIzUD7wH6c" as="image">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    
+    <link rel="modulepreload" href="/index.tsx">
+    
+    <style>
+      :root {
+        --color-background: #0b1326;
+        --color-on-background: #dae2fd;
+        --color-primary: #ffb3ad;
+        --color-primary-container: #ff5451;
+        --color-secondary: #ffb95f;
+        --color-tertiary: #b7c8e1;
+        --color-on-primary-container: #5c0008;
+        --color-on-surface: #dae2fd;
+        --color-on-surface-variant: #e4beba;
+        --color-surface-container-lowest: #060e20;
+        --color-surface-container-highest: #2d3449;
+        --color-outline-variant: #5b403e;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        scroll-behavior: smooth;
+        background-color: var(--color-background);
+        color: var(--color-on-background);
+        margin: 0;
+      }
+      .text-gradient {
+        background: linear-gradient(135deg, #ffb3ad 0%, #ff5451 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .btn-primary-gradient {
+        background: linear-gradient(135deg, #ff5451 0%, #ffb3ad 100%);
+      }
+    </style>
     
     <link rel="preload" href="/index.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/index.css"></noscript>
