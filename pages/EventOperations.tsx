@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Users, Globe, Trophy, Calendar, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Users, Globe, Calendar, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface EventOpsProps {

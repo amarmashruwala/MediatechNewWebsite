@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Monitor, Globe, Zap, Video, Settings, ShoppingCart, MessageSquare, Star } from 'lucide-react';
+import { ArrowRight, Monitor, Globe, Video, Settings, ShoppingCart, Star } from 'lucide-react';
 
 interface HomeProps {
   theme?: string;

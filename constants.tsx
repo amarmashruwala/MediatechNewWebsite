@@ -1,16 +1,5 @@
 
 import React from 'react';
-import { 
-  Tv, 
-  Video, 
-  Mic2, 
-  Server, 
-  Settings, 
-  Calendar, 
-  ShoppingBag,
-  MonitorCheck,
-  Layers
-} from 'lucide-react';
 import { ServiceItem, Testimonial } from './types.ts';
 
 export const COLORS = {

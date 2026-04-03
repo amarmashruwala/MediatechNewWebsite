@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Users, ArrowRight, CheckCircle2, Award, Target } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Award, Target } from 'lucide-react';
 
 interface AboutProps {
   theme?: string;

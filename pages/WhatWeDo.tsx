@@ -1,13 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { 
-  Settings, 
-  ShoppingCart, 
   ArrowRight, 
-  CheckCircle2, 
-  Zap,
-  Shield,
-  Clock
+  CheckCircle2
 } from 'lucide-react';
 
 interface WhatWeDoProps {

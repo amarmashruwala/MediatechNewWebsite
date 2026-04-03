@@ -10,10 +10,3 @@ export interface Testimonial {
   text: string;
   role?: string;
 }
-
-export interface Project {
-  id: string;
-  title: string;
-  category: string;
-  image: string;
-}
