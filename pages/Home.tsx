@@ -1,166 +1,251 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Monitor, Globe, Zap } from 'lucide-react';
-import { TESTIMONIALS } from '../constants.tsx';
+import { ArrowRight, Monitor, Globe, Zap, Video, Settings, ShoppingCart, MessageSquare, Star } from 'lucide-react';
 
 interface HomeProps {
   theme?: string;
 }
 
-const Home: React.FC<HomeProps> = ({ theme = 'dark' }) => {
-  const heroImageUrl = "https://drive.google.com/thumbnail?id=1dgHz8-asPWsddpAeqzSzCNHw39Y-H11y&sz=w1280-h720";
+const Home: React.FC<HomeProps> = () => {
+  const heroImageUrl = "https://lh3.googleusercontent.com/aida-public/AB6AXuAbjK0MV29CflD1o5D27Z9XUf8UarahJkMXXefHuiHceqvpba6LI30u0AWQmJKUy0tLqs09jxPCLDkJsEzZkcWb_NThA2IDwKrkfPHsOxwSK5KsHGDFcd_i_dAZYe_NfOLhzuD6RswHzjoOPcBaJrJFhDV8FQyfZHYOvSJzsHP4jlgxFcuGjijPURZgDZvXrfNcjCLEg1F0ZoIEZBd10HVAvQ-52IaE0T8MAi_5tDElWmwPIEeoOYXvHCnGIJsi-jNKgsIzUD7wH6c";
 
   return (
-    <div className="relative overflow-hidden">
+    <div className="relative">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center pt-20">
-        <div className={`absolute top-0 -left-4 w-96 h-96 bg-red-600 rounded-full mix-blend-multiply filter blur-[128px] animate-blob transition-opacity duration-700 ${theme === 'dark' ? 'opacity-20' : 'opacity-10'}`}></div>
-        <div className={`absolute top-0 -right-4 w-96 h-96 bg-blue-600 rounded-full mix-blend-multiply filter blur-[128px] animate-blob animation-delay-2000 transition-opacity duration-700 ${theme === 'dark' ? 'opacity-20' : 'opacity-10'}`}></div>
+      <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src={heroImageUrl} 
+            alt="Professional broadcast studio console" 
+            className="w-full h-full object-cover opacity-40"
+            referrerPolicy="no-referrer"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent"></div>
+        </div>
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <div className={`inline-flex items-center space-x-2 border px-3 py-1 rounded-full text-sm font-semibold mb-6 transition-colors duration-500 ${theme === 'dark' ? 'bg-red-500/10 border-red-500/20 text-red-400' : 'bg-red-50 border-red-100 text-red-600'}`}>
-              <Zap size={14} className="fill-current" />
-              <span>Innovation in Media Technology</span>
+        <div className="relative z-10 max-w-7xl mx-auto px-6 grid md:grid-cols-12 gap-12 items-center">
+          <div className="md:col-span-10 lg:col-span-8">
+            <div className="flex items-center gap-3 mb-6">
+              <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+              <span className="text-primary font-label text-xs tracking-[0.2em] uppercase font-bold">Live Transmission Active</span>
             </div>
-            <h1 className={`text-5xl lg:text-7xl font-extrabold leading-[1.1] mb-6 transition-colors duration-500 ${theme === 'dark' ? 'text-white' : 'text-slate-950'}`}>
-              Sydney's <span className="text-gradient">Audio Visual</span> & Live Streaming Experts
+            <h1 className="text-6xl md:text-8xl font-black tracking-tighter leading-[0.9] mb-8">
+              Sydney's Audio Visual & <span className="text-gradient">Live Streaming</span> Experts
             </h1>
-            <p className={`text-xl mb-10 leading-relaxed max-w-xl transition-colors duration-500 ${theme === 'dark' ? 'text-slate-400' : 'text-slate-600'}`}>
+            <p className="text-xl md:text-2xl text-on-surface-variant max-w-2xl font-light leading-relaxed mb-10">
               From high-end AI Media Systems to seamless Livestream Events, we bridge the gap between Technology, Content Distribution and Audience Engagement.
             </p>
-            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-              <Link to="/contact" className="px-8 py-4 bg-red-600 hover:bg-red-700 text-white rounded-xl font-bold text-lg transition-all shadow-xl shadow-red-900/40 flex items-center justify-center">
-                Start a Project <ArrowRight className="ml-2" size={20} />
+            <div className="flex flex-wrap gap-4">
+              <Link to="/contact" className="btn-primary-gradient text-on-primary-container px-10 py-5 rounded-xl font-black text-lg shadow-xl shadow-primary-container/20 hover:scale-105 transition-transform flex items-center">
+                Start a Project
               </Link>
-              <Link to="/about" className={`px-8 py-4 border rounded-xl font-bold text-lg transition-all flex items-center justify-center ${theme === 'dark' ? 'bg-slate-900 hover:bg-slate-800 text-white border-slate-800' : 'bg-white hover:bg-slate-50 text-slate-900 border-slate-200 shadow-sm'}`}>
-                Learn More
+              <Link to="/projects" className="border border-outline-variant hover:bg-surface-variant/30 text-on-surface px-10 py-5 rounded-xl font-black text-lg transition-all backdrop-blur-md">
+                Our Work
               </Link>
-            </div>
-          </div>
-          <div className="relative">
-            <div className="absolute -inset-1 bg-gradient-to-r from-red-600 to-red-400 rounded-2xl blur opacity-25"></div>
-            <div className={`relative border rounded-2xl overflow-hidden shadow-2xl transition-colors duration-500 ${theme === 'dark' ? 'bg-slate-900 border-slate-800' : 'bg-white border-slate-100'}`}>
-              <img 
-                src={heroImageUrl} 
-                alt="MediaTech Solutions Studio Setup" 
-                className="w-full h-auto min-h-[400px] object-cover opacity-90 brightness-110"
-                loading="lazy"
-                decoding="async"
-              />
-              <div className={`absolute inset-0 bg-gradient-to-t via-transparent to-transparent ${theme === 'dark' ? 'from-slate-950' : 'from-white/40'}`}></div>
-              <div className={`absolute bottom-6 left-6 right-6 p-6 backdrop-blur-md rounded-xl border transition-colors duration-500 ${theme === 'dark' ? 'bg-slate-900/80 border-white/5' : 'bg-white/80 border-slate-200 shadow-xl'}`}>
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center">
-                    <Monitor className="text-white" size={24} />
-                  </div>
-                  <div>
-                    <h3 className={`font-bold transition-colors ${theme === 'dark' ? 'text-white' : 'text-slate-950'}`}>Advanced Broadcast Systems</h3>
-                    <p className={`text-sm transition-colors ${theme === 'dark' ? 'text-slate-400' : 'text-slate-600'}`}>Next-gen infrastructure for global reach</p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
+        
+        {/* Subtle Neon Accents */}
+        <div className="absolute bottom-0 right-0 w-1/3 h-1/2 bg-primary/10 blur-[120px] rounded-full -mr-20 -mb-20"></div>
       </section>
 
-      {/* Quick Services Overview */}
-      <section className={`py-24 relative transition-colors duration-500 ${theme === 'dark' ? 'bg-slate-950' : 'bg-slate-100'}`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className={`text-3xl md:text-5xl font-bold mb-4 transition-colors ${theme === 'dark' ? 'text-white' : 'text-slate-950'}`}>Comprehensive Solutions</h2>
-            <p className={`text-lg transition-colors ${theme === 'dark' ? 'text-slate-400' : 'text-slate-600'}`}>What we bring to the table</p>
+      {/* Comprehensive Solutions: Bento Grid */}
+      <section className="py-32 bg-surface-container-lowest relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="mb-20">
+            <h2 className="text-xs font-bold text-secondary tracking-[0.3em] uppercase mb-4">Core Competencies</h2>
+            <h3 className="text-4xl md:text-5xl font-black tracking-tight text-on-surface">Comprehensive Solutions</h3>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { 
-                icon: <Globe size={32} className="text-red-500" />, 
-                title: 'Event Operations', 
-                desc: 'Flawless execution of Virtual and Hybrid Meetings and high-impact Live Streaming Events',
-                path: '/event-ops'
-              },
-              { 
-                icon: <Monitor size={32} className="text-red-500" />, 
-                title: 'Consultancy and Design', 
-                desc: 'On Premise and Cloud system design and Deployment to tackle complex Media Technology Challenges',
-                path: '/consultancy'
-              },
-              { 
-                icon: <Zap size={32} className="text-red-500" />, 
-                title: 'Equipment Sales', 
-                desc: 'Providing innovative Audio Visual and Live Streaming equipment for professional set-ups',
-                path: '/equipment'
-              }
-            ].map((service, idx) => (
-              <div key={idx} className={`group p-8 rounded-2xl border transition-all hover:-translate-y-2 ${theme === 'dark' ? 'bg-slate-900/50 border-slate-800 hover:border-red-500/50' : 'bg-white border-slate-200 shadow-sm hover:border-red-500/30'}`}>
-                <div className="mb-6">{service.icon}</div>
-                <h3 className={`text-2xl font-bold mb-4 transition-colors ${theme === 'dark' ? 'text-white' : 'text-slate-950'}`}>{service.title}</h3>
-                <p className={`mb-8 leading-relaxed transition-colors ${theme === 'dark' ? 'text-slate-400' : 'text-slate-600'}`}>
-                  {service.desc}
-                </p>
-                <Link to={service.path} className="flex items-center text-red-500 font-bold group-hover:translate-x-2 transition-transform">
-                  Explore <ArrowRight className="ml-2" size={18} />
+            {/* Card 1 */}
+            <div className="group relative bg-surface-container-low p-10 rounded-xl overflow-hidden hover:bg-surface-container transition-all duration-500">
+              <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+                <Globe size={96} />
+              </div>
+              <div className="relative z-10">
+                <div className="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-8">
+                  <Video className="text-primary" size={32} />
+                </div>
+                <h4 className="text-2xl font-bold mb-4 text-on-surface">Event Operations</h4>
+                <p className="text-on-surface-variant leading-relaxed">Flawless execution of Virtual and Hybrid Meetings and high-impact Live Streaming Events</p>
+              </div>
+              <div className="mt-8 pt-8 border-t border-outline-variant/30 group-hover:border-primary/30 transition-colors">
+                <Link to="/event-ops" className="inline-flex items-center gap-2 text-primary font-bold text-sm uppercase tracking-widest">
+                  Explore Service <ArrowRight size={16} />
                 </Link>
               </div>
-            ))}
+            </div>
+
+            {/* Card 2 */}
+            <div className="group relative bg-surface-container-high p-10 rounded-xl overflow-hidden hover:bg-surface-container-highest transition-all duration-500 md:scale-105 z-10 shadow-2xl">
+              <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+                <Settings size={96} />
+              </div>
+              <div className="relative z-10">
+                <div className="w-14 h-14 bg-secondary/10 rounded-lg flex items-center justify-center mb-8">
+                  <Monitor className="text-secondary" size={32} />
+                </div>
+                <h4 className="text-2xl font-bold mb-4 text-on-surface">Consultancy & Design</h4>
+                <p className="text-on-surface-variant leading-relaxed">Architecting bespoke On Premise and Cloud infrastructure using AI-driven workflows. We design the future of communication systems.</p>
+              </div>
+              <div className="mt-8 pt-8 border-t border-outline-variant/30 group-hover:border-secondary/30 transition-colors">
+                <Link to="/consultancy" className="inline-flex items-center gap-2 text-secondary font-bold text-sm uppercase tracking-widest">
+                  View Designs <ArrowRight size={16} />
+                </Link>
+              </div>
+            </div>
+
+            {/* Card 3 */}
+            <div className="group relative bg-surface-container-low p-10 rounded-xl overflow-hidden hover:bg-surface-container transition-all duration-500">
+              <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+                <ShoppingCart size={96} />
+              </div>
+              <div className="relative z-10">
+                <div className="w-14 h-14 bg-tertiary/10 rounded-lg flex items-center justify-center mb-8">
+                  <ShoppingCart className="text-tertiary" size={32} />
+                </div>
+                <h4 className="text-2xl font-bold mb-4 text-on-surface">Equipment Sales</h4>
+                <p className="text-on-surface-variant leading-relaxed">Direct access to industry-leading media technology hardware. Authorized partner for premium audio visual & broadcast brands.</p>
+              </div>
+              <div className="mt-8 pt-8 border-t border-outline-variant/30 group-hover:border-tertiary/30 transition-colors">
+                <Link to="/equipment" className="inline-flex items-center gap-2 text-tertiary font-bold text-sm uppercase tracking-widest">
+                  Browse Store <ArrowRight size={16} />
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className={`py-24 transition-colors duration-500 ${theme === 'dark' ? 'bg-slate-900/30' : 'bg-white'}`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16">
+      {/* Social Proof Section */}
+      <section className="py-32 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
             <div className="max-w-2xl">
-              <h2 className={`text-4xl font-bold mb-4 italic transition-colors ${theme === 'dark' ? 'text-white' : 'text-slate-950'}`}>"Transforming how the world communicates"</h2>
-              <p className={`text-xl transition-colors ${theme === 'dark' ? 'text-slate-400' : 'text-slate-600'}`}>Trusted by global innovators and creative leaders.</p>
+              <h2 className="text-4xl md:text-6xl font-black italic tracking-tight text-on-surface leading-tight mb-4">
+                "Transforming how the world communicates"
+              </h2>
+              <p className="text-on-surface-variant text-lg font-medium">
+                Trusted by global innovators and creative leaders.
+              </p>
             </div>
-            <Link to="/contact" className="mt-8 md:mt-0 px-8 py-3 border border-red-500 text-red-500 hover:bg-red-500 hover:text-white font-bold rounded-lg transition-all">
+            <Link to="/contact" className="border-2 border-primary text-primary hover:bg-primary hover:text-on-primary px-8 py-3 rounded-xl font-bold transition-all">
               Join our Clients
             </Link>
           </div>
-
+          
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {TESTIMONIALS.map((t, idx) => (
-              <div key={idx} className={`p-8 rounded-2xl border relative overflow-hidden transition-all ${theme === 'dark' ? 'bg-slate-950 border-slate-900' : 'bg-slate-50 border-slate-200'}`}>
-                <div className="absolute top-0 right-0 w-32 h-32 bg-red-600/10 rounded-full blur-3xl"></div>
-                <p className={`text-lg italic mb-6 relative transition-colors ${theme === 'dark' ? 'text-slate-300' : 'text-slate-700'}`}>"{t.text}"</p>
-                <div className="flex items-center space-x-3">
-                  <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold transition-colors ${theme === 'dark' ? 'bg-slate-800 text-red-500' : 'bg-red-100 text-red-600'}`}>
-                    {t.name.charAt(0)}
-                  </div>
-                  <div>
-                    <h4 className={`font-bold transition-colors ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>{t.name}</h4>
-                    <div className="flex text-yellow-500 text-xs">
-                      {[...Array(5)].map((_, i) => <Zap key={i} size={10} className="fill-current" />)}
-                    </div>
+            {/* Testimonial 1 */}
+            <div className="bg-surface-container-low p-10 rounded-2xl border border-outline-variant/20 hover:border-primary/30 transition-all group">
+              <p className="text-on-surface italic mb-8 text-lg leading-relaxed">
+                "MediaTech Solutions was simply amazing! Couldn't have ask for a better partner! Everything was on point! I highly recommended, you won't be disappointed!"
+              </p>
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-primary font-bold text-lg">
+                  S
+                </div>
+                <div>
+                  <p className="font-bold text-on-surface">Shelina Nicholas</p>
+                  <div className="flex gap-1 mt-1">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} size={12} className="fill-secondary text-secondary" />
+                    ))}
                   </div>
                 </div>
               </div>
-            ))}
+            </div>
+            
+            {/* Testimonial 2 */}
+            <div className="bg-surface-container-low p-10 rounded-2xl border border-outline-variant/20 hover:border-primary/30 transition-all group">
+              <p className="text-on-surface italic mb-8 text-lg leading-relaxed">
+                "MediaTech Solutions exceeded all expectations! Our live streaming systems perform flawlessly! Absolutely recommend their services - you'll be thrilled with the results!"
+              </p>
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-secondary font-bold text-lg">
+                  B
+                </div>
+                <div>
+                  <p className="font-bold text-on-surface">Brian Moten</p>
+                  <div className="flex gap-1 mt-1">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} size={12} className="fill-secondary text-secondary" />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Testimonial 3 */}
+            <div className="bg-surface-container-low p-10 rounded-2xl border border-outline-variant/20 hover:border-primary/30 transition-all group">
+              <p className="text-on-surface italic mb-8 text-lg leading-relaxed">
+                "Their attention to detail in AV networked systems is unparalleled. They transformed our corporate communications overnight."
+              </p>
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-tertiary font-bold text-lg">
+                  S
+                </div>
+                <div>
+                  <p className="font-bold text-on-surface">Sarah Jenkins</p>
+                  <div className="flex gap-1 mt-1">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} size={12} className="fill-secondary text-secondary" />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Testimonial 4 */}
+            <div className="bg-surface-container-low p-10 rounded-2xl border border-outline-variant/20 hover:border-primary/30 transition-all group">
+              <p className="text-on-surface italic mb-8 text-lg leading-relaxed">
+                "Seamless implementation of our 24/7 broadcast system. The technical support and consulting provided were top-notch."
+              </p>
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-on-surface-variant font-bold text-lg">
+                  D
+                </div>
+                <div>
+                  <p className="font-bold text-on-surface">David Chen</p>
+                  <div className="flex gap-1 mt-1">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} size={12} className="fill-secondary text-secondary" />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Client Logos */}
+          <div className="mt-24 pt-12 border-t border-outline-variant/20 flex flex-wrap justify-center md:justify-between gap-12 items-center opacity-40 grayscale hover:grayscale-0 transition-all duration-700">
+            <div className="text-2xl font-black">WSTI</div>
+            <div className="text-2xl font-black">GLOBAL_EVENTS</div>
+            <div className="text-2xl font-black">SYDNEY_MEDIA</div>
+            <div className="text-2xl font-black">STREAM_INC</div>
+            <div className="text-2xl font-black">AV_PIONEER</div>
           </div>
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-red-600 opacity-10"></div>
-        <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
-          <h2 className={`text-4xl md:text-6xl font-black mb-8 transition-colors ${theme === 'dark' ? 'text-white' : 'text-slate-950'}`}>Ready to Elevate Your Media Communication?</h2>
-          <p className={`text-xl mb-12 transition-colors ${theme === 'dark' ? 'text-slate-300' : 'text-slate-600'}`}>
-            Whether you need a full turn-key broadcast system or a bespoke hybrid event set-up, we are here to design your success.
+      {/* Ready to Elevate: Final CTA */}
+      <section className="py-32 bg-surface-container-highest relative overflow-hidden mx-6 rounded-3xl mb-32">
+        <div className="absolute inset-0 opacity-20 pointer-events-none">
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,#ff5451,transparent_70%)] blur-[100px]"></div>
+        </div>
+        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+          <h2 className="text-5xl md:text-7xl font-black tracking-tighter text-on-surface mb-8">
+            Ready to Elevate Your Media Communication?
+          </h2>
+          <p className="text-xl text-on-surface-variant mb-12 max-w-2xl mx-auto font-light">
+            Join the industry leaders who trust MediaTech Solutions for mission-critical broadcasts and high-impact AV design.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-            <Link to="/contact" className={`px-10 py-5 rounded-xl font-black text-xl transition-all shadow-2xl ${theme === 'dark' ? 'bg-white text-slate-950 hover:bg-slate-200' : 'bg-slate-950 text-white hover:bg-slate-800'}`}>
-              Connect With Us
-            </Link>
-            <Link to="/projects" className={`px-10 py-5 border rounded-xl font-bold text-xl transition-all ${theme === 'dark' ? 'bg-slate-950 text-white border-slate-800 hover:bg-slate-900' : 'bg-white text-slate-950 border-slate-200 hover:bg-slate-50 shadow-sm'}`}>
-              View Our Work
-            </Link>
-          </div>
+          <Link to="/contact" className="inline-block btn-primary-gradient text-on-primary-container px-12 py-6 rounded-xl font-black text-xl shadow-2xl shadow-primary/20 hover:scale-105 transition-all">
+            Contact Us Now
+          </Link>
         </div>
       </section>
     </div>

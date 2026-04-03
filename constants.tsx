@@ -89,7 +89,7 @@ export const TESTIMONIALS: Testimonial[] = [
 
 export const NAV_LINKS = [
   { name: 'About', path: '/about' },
-  { name: 'What We Do', path: '/what-we-do', dropdown: [
+  { name: 'Services', path: '/what-we-do', dropdown: [
     { name: 'Event Operations', path: '/event-ops' },
     { name: 'Consultancy and Design', path: '/consultancy' },
     { name: 'Equipment Sales', path: '/equipment' }
