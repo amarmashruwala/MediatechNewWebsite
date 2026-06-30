@@ -52,7 +52,7 @@ const Projects: React.FC<ProjectsProps> = () => {
       {/* Header Section */}
       <section className="relative py-32 overflow-hidden bg-surface-container-lowest">
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_30%,#ff5451,transparent_50%)]"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_30%,#2563eb,transparent_50%)]"></div>
         </div>
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="flex items-center gap-3 mb-6">

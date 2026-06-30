@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { HashRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, Mail, Phone, MapPin, Linkedin, Youtube, Facebook, Sun, Moon, Loader2, Layers } from 'lucide-react';
+import { Menu, X, ChevronDown, Mail, Phone, MapPin, Linkedin, Youtube, Facebook, Sun, Moon, Loader2, Layers, ArrowUp } from 'lucide-react';
 
 const Home = lazy(() => import('./pages/Home.tsx'));
 const About = lazy(() => import('./pages/About.tsx'));
@@ -39,7 +39,7 @@ const Navbar: React.FC<{ theme: string; toggleTheme: () => void }> = ({ theme, t
   }, [location]);
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-slate-950/40 backdrop-blur-xl shadow-[0_8px_32px_rgba(239,68,68,0.08)]">
+    <nav className="fixed top-0 w-full z-50 bg-slate-950/40 backdrop-blur-xl shadow-[0_8px_32px_rgba(59,130,246,0.08)]">
       <div className="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
         <Link to="/" className="hover:opacity-80 transition-opacity">
           <Logo />
@@ -61,7 +61,7 @@ const Navbar: React.FC<{ theme: string; toggleTheme: () => void }> = ({ theme, t
                 <>
                   <Link 
                     to={link.path} 
-                    className={`flex items-center gap-1 transition-colors ${location.pathname === link.path ? 'text-red-400 border-b-2 border-red-400 pb-1' : 'text-slate-300 hover:text-slate-50'}`}
+                    className={`flex items-center gap-1 transition-colors ${location.pathname === link.path ? 'text-blue-400 border-b-2 border-blue-400 pb-1' : 'text-slate-300 hover:text-slate-50'}`}
                   >
                     {link.name}
                     {link.dropdown && <ChevronDown size={14} className="group-hover:rotate-180 transition-transform" />}
@@ -74,7 +74,7 @@ const Navbar: React.FC<{ theme: string; toggleTheme: () => void }> = ({ theme, t
                           <Link 
                             key={sub.name}
                             to={sub.path}
-                            className="block py-2 px-4 text-xs text-slate-400 hover:text-red-400 hover:bg-slate-800/50 rounded-lg transition-all"
+                            className="block py-2 px-4 text-xs text-slate-400 hover:text-blue-400 hover:bg-slate-800/50 rounded-lg transition-all"
                           >
                             {sub.name}
                           </Link>
@@ -122,7 +122,7 @@ const Navbar: React.FC<{ theme: string; toggleTheme: () => void }> = ({ theme, t
                 <>
                   <Link 
                     to={link.path} 
-                    className={`block text-lg font-bold tracking-tight ${location.pathname === link.path ? 'text-red-400' : 'text-slate-300'}`}
+                    className={`block text-lg font-bold tracking-tight ${location.pathname === link.path ? 'text-blue-400' : 'text-slate-300'}`}
                   >
                     {link.name}
                   </Link>
@@ -132,7 +132,7 @@ const Navbar: React.FC<{ theme: string; toggleTheme: () => void }> = ({ theme, t
                         <Link 
                           key={sub.name}
                           to={sub.path}
-                          className="block text-sm font-medium text-slate-500 hover:text-red-400"
+                          className="block text-sm font-medium text-slate-500 hover:text-blue-400"
                         >
                           {sub.name}
                         </Link>
@@ -252,6 +252,47 @@ const Footer: React.FC<{ theme: string }> = ({ theme }) => (
   </footer>
 );
 
+const BackToTop: React.FC = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Show when scrolled past the hero section (around 400px)
+      if (window.scrollY > 400) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    // Run once on mount in case page is already scrolled
+    handleScroll();
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
+  return (
+    <button
+      id="back-to-top"
+      onClick={scrollToTop}
+      className={`fixed bottom-8 right-8 z-50 p-4 rounded-full bg-gradient-to-br from-primary-container to-primary text-on-primary-container shadow-2xl border border-outline-variant/30 hover:scale-110 hover:shadow-[0_0_20px_rgba(37,99,235,0.4)] active:scale-95 transition-all duration-300 flex items-center justify-center cursor-pointer ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'
+      }`}
+      aria-label="Back to top"
+    >
+      <ArrowUp size={20} className="stroke-[3]" />
+    </button>
+  );
+};
+
 const App: React.FC = () => {
   const [theme, setTheme] = useState(() => {
     return localStorage.getItem('theme') || 'dark';
@@ -273,12 +314,12 @@ const App: React.FC = () => {
 
   return (
     <Router>
-      <div className={`flex flex-col min-h-screen transition-colors duration-500 selection:bg-red-500/30 selection:text-red-200 ${theme === 'dark' ? 'bg-slate-950 text-slate-100' : 'bg-slate-50 text-slate-900'}`}>
+      <div className={`flex flex-col min-h-screen transition-colors duration-500 selection:bg-blue-500/30 selection:text-blue-200 ${theme === 'dark' ? 'bg-slate-950 text-slate-100' : 'bg-slate-50 text-slate-900'}`}>
         <Navbar theme={theme} toggleTheme={toggleTheme} />
         <main className="flex-grow">
           <Suspense fallback={
             <div className="flex items-center justify-center min-h-[60vh]">
-              <Loader2 className="w-10 h-10 text-red-600 animate-spin" />
+              <Loader2 className="w-10 h-10 text-blue-600 animate-spin" />
             </div>
           }>
             <Routes>
@@ -294,9 +335,11 @@ const App: React.FC = () => {
           </Suspense>
         </main>
         <Footer theme={theme} />
+        <BackToTop />
       </div>
     </Router>
   );
 };
+
 
 export default App;

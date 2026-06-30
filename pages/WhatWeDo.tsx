@@ -179,7 +179,7 @@ const WhatWeDo: React.FC<WhatWeDoProps> = () => {
           </p>
           <div className="flex justify-center items-center gap-6">
             <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent to-outline-variant/30"></div>
-            <Link to="/contact" className="btn-primary-gradient text-on-primary-container text-lg font-black px-12 py-5 rounded-full shadow-[0_0_40px_rgba(239,68,68,0.2)] hover:scale-105 active:scale-95 transition-all">
+            <Link to="/contact" className="btn-primary-gradient text-on-primary-container text-lg font-black px-12 py-5 rounded-full shadow-[0_0_40px_rgba(59,130,246,0.2)] hover:scale-105 active:scale-95 transition-all">
               INITIATE CONSULTATION
             </Link>
             <div className="h-[1px] flex-1 bg-gradient-to-l from-transparent to-outline-variant/30"></div>

@@ -233,7 +233,7 @@ const Home: React.FC<HomeProps> = () => {
       {/* Ready to Elevate: Final CTA */}
       <section className="py-32 bg-surface-container-highest relative overflow-hidden mx-6 rounded-3xl mb-32">
         <div className="absolute inset-0 opacity-20 pointer-events-none">
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,#ff5451,transparent_70%)] blur-[100px]"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,#2563eb,transparent_70%)] blur-[100px]"></div>
         </div>
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-5xl md:text-7xl font-black tracking-tighter text-on-surface mb-8">
