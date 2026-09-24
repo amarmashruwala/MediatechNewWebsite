@@ -31,7 +31,7 @@ const Home: React.FC<HomeProps> = () => {
               <span className="text-primary font-label text-xs tracking-[0.2em] uppercase font-bold">Live Transmission Active</span>
             </div>
             <h1 className="text-6xl md:text-8xl font-black tracking-tighter leading-[0.9] mb-8">
-              Sydney's Audio Visual & <span className="text-gradient">Live Streaming</span> Experts
+              Audio Visual & <span className="text-gradient">Live Streaming</span> Experts
             </h1>
             <p className="text-xl md:text-2xl text-on-surface-variant max-w-2xl font-light leading-relaxed mb-10">
               From high-end AI Media Systems to seamless Livestream Events, we bridge the gap between Technology, Content Distribution and Audience Engagement.
